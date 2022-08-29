@@ -1,10 +1,10 @@
 
-from src.classQueue import Queue
+from src.classQueueLinked import QueueLinked
 
 
 
 if __name__ == '__main__':
-    cola = Queue()
+    cola = QueueLinked()
 
     cola.enqueue('a')
     cola.enqueue('b')

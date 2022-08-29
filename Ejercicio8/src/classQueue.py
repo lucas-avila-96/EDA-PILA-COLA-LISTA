@@ -1,3 +1,4 @@
+import numpy as np
 
 class Queue:
 	__q = None
@@ -7,7 +8,7 @@ class Queue:
 	__count = 0  
 
 	def __init__(self, size = 1000):
-		self.__q = [None] * size
+		self.__q = np.empty(size, int)
 		self.__capacity = size
 		self.__front = 0  	
 		self.__rear = 0		
@@ -23,11 +24,11 @@ class Queue:
 		return out
 
 	def dequeue(self):
-		x = None
-		if not self.isEmpty():
-			x = self.__q[self.__front]
-			self.__front = (self.__front + 1) % self.__capacity
-			self.__count -= 1
+		if self.isEmpty():
+			print('La cola esta vacia')
+		x = self.__q[self.__front]
+		self.__front = (self.__front + 1) % self.__capacity
+		self.__count -= 1
 		return x
 
 	def enqueue(self, value):
@@ -46,3 +47,10 @@ class Queue:
 	def isFull(self):
 		return self.size() == self.__capacity
 
+
+	
+	def actualizarTiempo(self, reloj):
+		i = self.__front
+		for _ in range(self.__count):
+			self.__q[i] = reloj
+			i = (i + 1) % self.__capacity

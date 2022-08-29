@@ -7,8 +7,8 @@ class Queue:
 	__rear = 0	
 	__count = 0  
 
-	def __init__(self, size=1000):
-		self.__q = np.empty(size, str)	
+	def __init__(self, size = 1000):
+		self.__q = np.empty(size, str)
 		self.__capacity = size
 		self.__front = 0  	
 		self.__rear = 0		

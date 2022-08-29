@@ -21,7 +21,7 @@ class QueueLinked:
 
     def dequeue(self):
         if self.__front is None:
-            print('La cola esta vacia')
+            print('Cola vacia')
         temp = self.__front
         self.__front = self.__front.getNext()
         if self.__front is None:
